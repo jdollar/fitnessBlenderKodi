@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<<<<<<< HEAD
 <addon id="plugin.video.fitnessBlender" name="Fitness Blender" version="0.1.0" provider-name="ionizedwarhead">
+=======
+<addon id="plugin.video.fitnessBlender" name="Fitness Blender" version="0.0.1" provider-name="ionizedwarhead">
+>>>>>>> 015eb0fce4556792220bf11bbd0de8b16d35f5ce
     <requires>
         <import addon="xbmc.python" version="2.20.0"/>
         <import addon="script.module.beautifulsoup" version="3.2.1"/>
