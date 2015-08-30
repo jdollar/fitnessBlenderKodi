@@ -1,12 +1,29 @@
 import sys
+
+import requests
+from bs4 import BeautifulSoup 
+
 import xbmcgui
 import xbmcplugin
 
 addon_handle = int(sys.argv[1])
-
 xbmcplugin.setContent(addon_handle, 'movies')
+fitnessBlenderBaseUrl = 'https://www.fitnessblender.com'
 
-li = xbmcgui.ListItem('My First Video!', iconImage='DefaultVideo.png')
-xbmcplugin.addDirectoryItem(handle=addon_handle, url='', listitem=li)
+def findAllVideoLinks():
+    response = requests.request('GET', fitnessBlenderBaseUrl + '/videos');
+    soup = BeautifulSoup(response.text,'html.parser')
+    return soup
 
-xbmcplugin.endOfDirectory(addon_handle)
+def generateVideoLinks(videoLinkList):
+    for videoLink in videoLinkList:
+        image = videoLink.find('img')
+        li = xbmcgui.ListItem(image['alt'], iconImage=fitnessBlenderBaseUrl + image['src'])
+        xbmcplugin.addDirectoryItem(handle=addon_handle, url=videoLink['href'], listitem=li)
+
+    xbmcplugin.endOfDirectory(addon_handle)
+
+
+soup = findAllVideoLinks()
+videoLinkList = soup.find_all('a',class_='videolink')
+generateVideoLinks(videoLinkList)
