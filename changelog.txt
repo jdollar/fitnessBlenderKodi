@@ -1,1 +1,5 @@
-
+0.1.0
+  - Implemented main video grabbing funcitonality
+  - List all videos
+  - Can navigate multiple pages
+  - Plays Videos from Youtube Addon
