@@ -11,7 +11,7 @@ VIDEO_MENU_ITEM = 'video'
 
 TYPE_PARAM = 'type'
 LINK_PARAM = 'link'
-KEYWORD_PARAM = 'keyword'
+KEYWORD_PARAM = 'keywords'
 PAGE_NUM_PARAM = 'pageNum'
 
 DEFAULT_VIDEO_IMAGE = 'DefaultVideo.jpg'
