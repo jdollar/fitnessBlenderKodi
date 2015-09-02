@@ -6,54 +6,57 @@ import urllib
 import xbmcgui
 import xbmc
 import xbmcplugin
+import xbmcaddon
 
 from bs4 import BeautifulSoup 
 
 from resources.lib.fitnessblender.constants import *
 from resources.lib.fitnessblender.util.dirUtil import DirUtil
-from resources.lib.fitnessblender.util.urlUtil import UrlUtil
+from resources.lib.fitnessblender.util.scrapeUtil import ScrapeUtil
+from resources.lib.fitnessblender.gui.filterGui import FilterGUI
 
 class FitnessBlender:
 
     def __init__(self):
         xbmcplugin.setContent(ADDON_HANDLE, 'movies')
-        self.dialog = xbmcgui.Dialog()
 
-        self.dirUtil = DirUtil()
-        self.urlUtil = UrlUtil()
+        args = urlparse.parse_qs(sys.argv[2][1:])
+        self.typeParam = args.get(TYPE_PARAM, None)
+        self.link = args.get(LINK_PARAM, None)
+        self.keywordParam = args.get(KEYWORD_PARAM, None)
+        self.videoPageNum = args.get(PAGE_NUM_PARAM, '1')
 
-        self.args = urlparse.parse_qs(sys.argv[2][1:])
-        self.typeParam = self.args.get(TYPE_PARAM, None)
-        self.link = self.args.get(LINK_PARAM, None)
-        self.keywordParam = self.args.get(KEYWORD_PARAM, None)
-        self.videoPageNum = self.args.get(PAGE_NUM_PARAM, '1')
+        self.nextPageNum = str(int(self.videoPageNum[0])+1)
 
+    def allVideoSelection(self):
+        soup = ScrapeUtil().findAllVideoLinksOnPage({'p':self.videoPageNum[0]})
+        videoLinkList = soup.find_all('a',class_='videolink')
+        DirUtil().generateVideoLinks(videoLinkList, {PAGE_NUM_PARAM:self.nextPageNum}, self.typeParam)
 
-    def findAllVideoLinksOnPage(self, params):
-        response = requests.request('GET', FITNESSBLENDER_BASE_URL + '/videos?' + urllib.urlencode(params))
-        soup = BeautifulSoup(response.text,'html.parser')
-        return soup
-
-    def getVideoId(self):
-        response = requests.request('GET', FITNESSBLENDER_BASE_URL + '/videos/' + self.link[0])
-        soup = BeautifulSoup(response.text, 'html.parser')
-        iframeFound = soup.find('iframe',src=re.compile('youtube'))
-        return re.search('embed/(?P<video_id>.+)\?', iframeFound['src']).group('video_id')
+    def searchVideoSelection(self):
+        dialog = xbmcgui.Dialog()
+        keywordInput = dialog.input('Keyword', type=xbmcgui.INPUT_ALPHANUM) if self.keywordParam is None else self.keywordParam[0]
+        soup = ScrapeUtil().findAllVideoLinksOnPage({'p':self.videoPageNum[0], KEYWORD_PARAM:keywordInput})
+        videoLinkList = soup.find_all('a',class_='videolink')
+        DirUtil().generateVideoLinks(videoLinkList, {KEYWORD_PARAM:keywordInput, PAGE_NUM_PARAM:self.nextPageNum}, self.typeParam)
 
     def playVideo(self, videoId):
         xbmc.executebuiltin('XBMC.PlayMedia(plugin://plugin.video.youtube/play/?video_id=' + videoId + ')')
 
     def run(self):
+
+        #addon = xbmcaddon.Addon('plugin.video.fitnessBlender')
+        #__path__ = addon.getAddonInfo('path')
+        #ui = FilterGUI('custom-filter-main.xml',__path__,'default')
+        #ui.doModal()
+        #xbmcgui.Dialog().ok('test', str(ui.getControl(1120).isSelected()))
+        #del ui
+
         if self.typeParam is None:
             DirUtil().buildMainMenu()
         elif self.typeParam[0] == ALL_VIDEO_MENU_ITEM:
-            soup = self.findAllVideoLinksOnPage({'p':self.videoPageNum[0]})
-            videoLinkList = soup.find_all('a',class_='videolink')
-            self.dirUtil.generateVideoLinks(videoLinkList, {PAGE_NUM_PARAM:str(int(self.videoPageNum[0])+1)}, self.typeParam)
+            self.allVideoSelection()
         elif self.typeParam[0] == SEARCH_VIDEO_MENU_ITEM:
-            keywordInput = self.dialog.input('Keyword', type=xbmcgui.INPUT_ALPHANUM) if self.keywordParam is None else self.keywordParam[0]
-            soup = self.findAllVideoLinksOnPage({'p':videoPageNum[0], KEYWORD_PARAM:keywordInput})
-            videoLinkList = soup.find_all('a',class_='videolink')
-            self.dirUtil.generateVideoLinks(videoLinkList, {KEYWORD_PARAM:keywordInput, PAGE_NUM_PARAM:str(int(self.videoPageNum[0])+1)}, self.typeParam)
+            self.searchVideoSelection()
         else:
-            self.playVideo(self.getVideoId())
+            self.playVideo(ScrapeUtil().getVideoId(self.link))

@@ -1,0 +1,45 @@
+<window id="129"> 
+        <defaultcontrol always="false">1120</defaultcontrol>
+        <visible>true</visible>
+    <coordinates> 
+            <system>1</system> 
+            <posx>640</posx> 
+            <posy>360</posy>
+            <allowoverlay>yes</allowoverlay>
+    </coordinates> 
+    <controls> 
+        <control type="image">
+            <description>Black Background</description>
+            <posx>200</posx> 
+            <posy>100</posy> 
+            <width>600</width>
+            <height>400</height> 
+            <ondown>3000</ondown> 
+            <onup>3000</onup>
+            <onleft>3000</onleft> 
+            <onright>3000</onright>
+        </control> 
+        <control type="radiobutton" id="1120">
+            <description>Action Button</description>
+            <type>radiobutton</type>
+            <posx>-180</posx> 
+            <posy>120</posy> 
+            <width>140</width>
+            <height>60</height> 
+            <textoffsetx>12</textoffsetx>
+            <align>center</align> 
+            <aligny>center</aligny>
+        </control> 
+        <control type="radiobutton" id="1121">
+            <description>Action Button</description>
+            <type>radiobutton</type>
+            <posx>-180</posx> 
+            <posy>220</posy> 
+            <width>140</width>
+            <height>60</height> 
+            <textoffsetx>12</textoffsetx>
+            <align>center</align> 
+            <aligny>center</aligny>
+        </control> 
+    </controls>
+</window>
