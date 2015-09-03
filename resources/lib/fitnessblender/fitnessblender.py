@@ -45,17 +45,19 @@ class FitnessBlender:
 
     def run(self):
 
-        addon = xbmcaddon.Addon('plugin.video.fitnessBlender')
-        __path__ = addon.getAddonInfo('path')
-        ui = FilterGUI('custom-filter-main.xml',__path__,'default')
-        ui.doModal()
-        del ui
 
         if self.typeParam is None:
             DirUtil().buildMainMenu()
         elif self.typeParam[0] == ALL_VIDEO_MENU_ITEM:
             self.allVideoSelection()
         elif self.typeParam[0] == SEARCH_VIDEO_MENU_ITEM:
-            self.searchVideoSelection()
+            addon = xbmcaddon.Addon('plugin.video.fitnessBlender')
+            __path__ = addon.getAddonInfo('path')
+            ui = FilterGUI('custom-filter-main.xml',__path__,'default')
+            ui.doModal()
+            ui.getSearchParameters()
+            del ui
+
+            #self.searchVideoSelection()
         else:
             self.playVideo(ScrapeUtil().getVideoId(self.link))

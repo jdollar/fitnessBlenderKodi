@@ -1,0 +1,5 @@
+#Kodi Fitness Blender App Language File
+
+msgctxt "#32001"
+msgid "Difficulty"
+msgstr "test"
