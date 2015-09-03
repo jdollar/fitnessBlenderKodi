@@ -45,12 +45,11 @@ class FitnessBlender:
 
     def run(self):
 
-        #addon = xbmcaddon.Addon('plugin.video.fitnessBlender')
-        #__path__ = addon.getAddonInfo('path')
-        #ui = FilterGUI('custom-filter-main.xml',__path__,'default')
-        #ui.doModal()
-        #xbmcgui.Dialog().ok('test', str(ui.getControl(1120).isSelected()))
-        #del ui
+        addon = xbmcaddon.Addon('plugin.video.fitnessBlender')
+        __path__ = addon.getAddonInfo('path')
+        ui = FilterGUI('custom-filter-main.xml',__path__,'default')
+        ui.doModal()
+        del ui
 
         if self.typeParam is None:
             DirUtil().buildMainMenu()

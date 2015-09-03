@@ -1,45 +1,64 @@
-<window id="129"> 
-        <defaultcontrol always="false">1120</defaultcontrol>
-        <visible>true</visible>
+<window id="140"> 
+    <defaultcontrol always="false">1101</defaultcontrol>
+    <visible>true</visible>
     <coordinates> 
             <system>1</system> 
-            <posx>640</posx> 
-            <posy>360</posy>
-            <allowoverlay>yes</allowoverlay>
+            <posx>0</posx> 
+            <posy>0</posy>
     </coordinates> 
+    <allowoverlay>true</allowoverlay>
+    <include>dialogeffect</include>
     <controls> 
         <control type="image">
             <description>Black Background</description>
-            <posx>200</posx> 
+            <posx>100</posx> 
             <posy>100</posy> 
-            <width>600</width>
-            <height>400</height> 
+            <width>680</width>
+            <height>480</height> 
+            <texture>black.png</texture>
             <ondown>3000</ondown> 
             <onup>3000</onup>
             <onleft>3000</onleft> 
             <onright>3000</onright>
         </control> 
-        <control type="radiobutton" id="1120">
-            <description>Action Button</description>
+        <control type="label" id="1100">
+            <description>Difficulty</description>
+            <label>Difficulty</label>
+            <posx>180</posx> 
+            <posy>80</posy>
+            <visible>true</visible>
+            <font>font14</font>
+            <textcolor>FFB2D4F5</textcolor>
+            <width>140</width>
+            <height>60</height> 
+            <textoffsetx>12</textoffsetx>
+            <align>center</align> 
+            <aligny>center</aligny>
+        </control> 
+        <control type="radiobutton" id="1101">
+            <description>1</description>
             <type>radiobutton</type>
-            <posx>-180</posx> 
+            <posx>180</posx> 
             <posy>120</posy> 
             <width>140</width>
             <height>60</height> 
             <textoffsetx>12</textoffsetx>
             <align>center</align> 
             <aligny>center</aligny>
+            <onright>1102</onright>
         </control> 
-        <control type="radiobutton" id="1121">
-            <description>Action Button</description>
+        <control type="radiobutton" id="1102">
+            <description>2</description>
             <type>radiobutton</type>
-            <posx>-180</posx> 
+            <posx>180</posx> 
             <posy>220</posy> 
             <width>140</width>
             <height>60</height> 
+            <label>Test</label>
             <textoffsetx>12</textoffsetx>
             <align>center</align> 
             <aligny>center</aligny>
+            <onleft>1101</onleft>
         </control> 
     </controls>
 </window>
