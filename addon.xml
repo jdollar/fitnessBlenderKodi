@@ -13,7 +13,7 @@
     	<summary lang="en">Provides a Kodi outlet for the fitness blender site</summary>
         <description lang="en">Fitness Videos from Fitness Blender</description>
         <disclaimer lang="en"></disclaimer>
-        <language></language>
+        <language/>
         <platform>all</platform>
         <license></license>
         <forum></forum>

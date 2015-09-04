@@ -8,100 +8,114 @@
     </coordinates> 
     <allowoverlay>true</allowoverlay>
     <include>dialogeffect</include>
-    <controls> 
-        <control type="image">
-            <description>Black Background</description>
-            <posx>100</posx> 
-            <posy>100</posy> 
-            <width>680</width>
-            <height>480</height> 
-            <texture>black.png</texture>
-            <ondown>3000</ondown> 
-            <onup>3000</onup>
-            <onleft>3000</onleft> 
-            <onright>3000</onright>
-        </control> 
-        <control type="label" id="1100">
-            <description>Difficulty</description>
-            <label>$LOCALIZE[32001]</label>
-            <posx>180</posx> 
-            <posy>80</posy>
-            <visible>true</visible>
-            <font>font14</font>
-            <textcolor>FFB2D4F5</textcolor>
-            <width>140</width>
-            <height>60</height> 
-            <textoffsetx>12</textoffsetx>
-            <align>center</align> 
-            <aligny>center</aligny>
-        </control> 
-        <control type="radiobutton" id="1101">
-            <description>1</description>
-            <type>radiobutton</type>
-            <label>$NUMBER[1]</label>
-            <posx>180</posx> 
-            <posy>120</posy> 
-            <width>60</width>
-            <height>60</height> 
-            <textoffsetx>12</textoffsetx>
-            <align>left</align> 
-            <aligny>center</aligny>
-            <onright>1102</onright>
-        </control> 
-        <control type="radiobutton" id="1102">
-            <description>2</description>
-            <label>$NUMBER[2]</label>
-            <type>radiobutton</type>
-            <posx>235</posx> 
-            <posy>120</posy> 
-            <width>60</width> 
-            <height>60</height> 
-            <textoffsetx>12</textoffsetx>
-            <align>left</align> 
-            <aligny>center</aligny>
-            <onright>1103</onright>
-            <onleft>1101</onleft>
-        </control> 
-        <control type="radiobutton" id="1103">
-            <description>3</description>
-            <label>$NUMBER[3]</label>
-            <type>radiobutton</type>
-            <posx>290</posx> 
-            <posy>120</posy> 
-            <width>60</width> 
-            <height>60</height> 
-            <textoffsetx>12</textoffsetx>
-            <align>left</align> 
-            <aligny>center</aligny>
-            <onright>1104</onright>
-            <onleft>1102</onleft>
-        </control> 
-        <control type="radiobutton" id="1104">
-            <description>4</description>
-            <label>$NUMBER[4]</label>
-            <type>radiobutton</type>
-            <posx>345</posx> 
-            <posy>120</posy> 
-            <width>60</width> 
-            <height>60</height> 
-            <textoffsetx>12</textoffsetx>
-            <align>left</align> 
-            <aligny>center</aligny>
-            <onright>1105</onright>
-            <onleft>1103</onleft>
-        </control> 
-        <control type="radiobutton" id="1105">
-            <description>5</description>
-            <label>$NUMBER[5]</label>
-            <type>radiobutton</type>
-            <posx>400</posx> 
-            <posy>120</posy> 
-            <width>60</width> 
-            <height>60</height> 
-            <textoffsetx>12</textoffsetx>
-            <align>left</align> 
-            <aligny>center</aligny>
-            <onleft>1104</onleft>
+    <controls>
+            <control type="image">
+                <description>Black Background</description>
+                <posx>100</posx> 
+                <posy>100</posy> 
+                <width>680</width>
+                <height>480</height> 
+                <texture>black.png</texture>
+                <ondown>3000</ondown> 
+                <onup>3000</onup>
+                <onleft>3000</onleft>
+                <onright>3000</onright>
+            </control> 
+            <control type="grouplist" id="1106">
+                    <posx>105</posx>
+                    <posy>105</posy>
+                    <width>500</width>
+                    <height>200</height>
+                    <visible>true</visible>
+                    <control type="group" id="1107">
+                            <posx>105</posx>
+                            <posy>105</posy>
+                            <width>400</width>
+                            <height>140</height>
+                            <visible>true</visible>
+                        <control type="label" id="1100">
+                            <description>Difficulty</description>
+                            <label>$ADDON[plugin.video.fitnessBlender 32000]</label>
+                            <posx>180</posx> 
+                            <posy>80</posy>
+                            <visible>true</visible>
+                            <font>font14</font>
+                            <textcolor>FFB2D4F5</textcolor>
+                            <width>140</width>
+                            <height>60</height> 
+                            <textoffsetx>12</textoffsetx>
+                            <align>center</align> 
+                            <aligny>center</aligny>
+                        </control> 
+                        <control type="radiobutton" id="1101">
+                            <description>1</description>
+                            <type>radiobutton</type>
+                            <label>$NUMBER[1]</label>
+                            <posx>180</posx> 
+                            <posy>120</posy> 
+                            <width>60</width>
+                            <height>60</height> 
+                            <textoffsetx>12</textoffsetx>
+                            <align>left</align> 
+                            <aligny>center</aligny>
+                            <onright>1102</onright>
+                        </control> 
+                        <control type="radiobutton" id="1102">
+                            <description>2</description>
+                            <label>$NUMBER[2]</label>
+                            <type>radiobutton</type>
+                            <posx>245</posx> 
+                            <posy>120</posy> 
+                            <width>60</width> 
+                            <height>60</height> 
+                            <textoffsetx>12</textoffsetx>
+                            <align>left</align> 
+                            <aligny>center</aligny>
+                            <onright>1103</onright>
+                            <onleft>1101</onleft>
+                        </control> 
+                        <control type="radiobutton" id="1103">
+                            <description>3</description>
+                            <label>$NUMBER[3]</label>
+                            <type>radiobutton</type>
+                            <posx>310</posx> 
+                            <posy>120</posy> 
+                            <width>60</width> 
+                            <height>60</height> 
+                            <textoffsetx>12</textoffsetx>
+                            <align>left</align> 
+                            <aligny>center</aligny>
+                            <onright>1104</onright>
+                            <onleft>1102</onleft>
+                        </control> 
+                        <control type="radiobutton" id="1104">
+                            <description>4</description>
+                            <label>$NUMBER[4]</label>
+                            <type>radiobutton</type>
+                            <posx>375</posx> 
+                            <posy>120</posy> 
+                            <width>60</width> 
+                            <height>60</height> 
+                            <textoffsetx>12</textoffsetx>
+                            <align>left</align> 
+                            <aligny>center</aligny>
+                            <onright>1105</onright>
+                            <onleft>1103</onleft>
+                        </control> 
+                        <control type="radiobutton" id="1105">
+                            <description>5</description>
+                            <label>$NUMBER[5]</label>
+                            <type>radiobutton</type>
+                            <posx>440</posx> 
+                            <posy>120</posy> 
+                            <width>60</width> 
+                            <height>60</height> 
+                            <textoffsetx>12</textoffsetx>
+                            <align>left</align> 
+                            <aligny>center</aligny>
+                            <onleft>1104</onleft>
+                    </control>
+            </control>
         </control>
     </controls>
 </window>

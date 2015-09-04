@@ -1,5 +1,38 @@
 #Kodi Fitness Blender App Language File
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Language: English\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-06-12 02:27:08\n"
+"PO-Revision-Date: 2015-06-12 02:27:08\n"
+"Last-Translator: you <>\n"
+"Language-Team: English <>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgctxt "#32000"
+msgid "Difficulty"
+msgstr ""
 
 msgctxt "#32001"
-msgid "Difficulty"
-msgstr "test"
+msgid "Body focus"
+msgstr ""
+
+msgctxt "#32002"
+msgid "Lower Body"
+msgstr ""
+
+msgctxt "#32003"
+msgid "Total Body"
+msgstr ""
+
+msgctxt "#32004"
+msgid "Upper Body"
+msgstr ""
+
+msgctxt "#32005"
+msgid "Core"
+msgstr ""
