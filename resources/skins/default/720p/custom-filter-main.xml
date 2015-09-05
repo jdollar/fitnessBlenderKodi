@@ -56,11 +56,32 @@
                   <onleft>3000</onleft>
                   <onright>3000</onright>
              </control>--> 
+             <control type="group">
+                <control type="label">
+                      <description>Keywords</description>
+                      <label>$ADDON[plugin.video.fitnessBlender 32010]</label>
+                      <posx>250</posx> 
+                      <posy>0</posy>
+                      <visible>true</visible>
+                      <font>font14</font>
+                      <textcolor>FFB2D4F5</textcolor>
+                      <width>140</width>
+                      <height>60</height> 
+                      <textoffsetx>12</textoffsetx>
+                      <align>center</align> 
+                      <aligny>center</aligny>
+                </control>
+                <control type="edit" id="1114">
+                    <posx>170</posx>
+                    <posy>65</posy>
+                    <visible>true</visible>
+                </control>
+             </control>
              <control type="group" id="1107">
                  <posx>0</posx>
-                 <posy>0</posy>
+                 <posy>100</posy>
                  <visible>true</visible>
-                 <control type="image" id="1108">
+                 <!--<control type="image" id="1108">
                       <description>Purple Background</description>
                       <posx>0</posx> 
                       <posy>0</posy> 
@@ -71,7 +92,7 @@
                       <onup>3000</onup>
                       <onleft>3000</onleft>
                       <onright>3000</onright>
-                 </control>
+                 </control>-->
                  <control type="label" id="1100">
                       <description>Difficulty</description>
                       <label>$ADDON[plugin.video.fitnessBlender 32000]</label>
@@ -99,6 +120,7 @@
                       <aligny>center</aligny>
                       <onright>1102</onright>
                       <ondown>1110</ondown>
+                      <onup>1114</onup>
                  </control> 
                  <control type="radiobutton" id="1102">
                       <description>2</description>
