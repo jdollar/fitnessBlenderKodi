@@ -13,6 +13,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#Filter Headings
+
 msgctxt "#32000"
 msgid "Difficulty"
 msgstr ""
@@ -35,4 +37,24 @@ msgstr ""
 
 msgctxt "#32005"
 msgid "Core"
+msgstr ""
+
+msgctxt "#32006"
+msgid "Minimum"
+msgstr ""
+
+msgctxt "#32007"
+msgid "Maximum"
+msgstr ""
+
+msgctxt "#32008"
+msgid "Calorie Burn"
+msgstr ""
+
+msgctxt "#32009"
+msgid "Workout time in minutes"
+msgstr ""
+
+msgctxt "#32010"
+msgid "Keyword(s)"
 msgstr ""

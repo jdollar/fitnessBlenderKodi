@@ -1,2 +1,5 @@
 *.pyo
+
+#Vim Files
 *.swp
+tags/

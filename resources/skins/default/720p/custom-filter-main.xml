@@ -2,119 +2,251 @@
     <defaultcontrol always="false">1101</defaultcontrol>
     <visible>true</visible>
     <coordinates> 
-            <system>1</system> 
-            <posx>0</posx> 
-            <posy>0</posy>
+         <system>1</system> 
+         <posx>0</posx>   
+         <posy>0</posy>
     </coordinates> 
     <allowoverlay>true</allowoverlay>
-    <include>dialogeffect</include>
+    <includes>
+        <include>dialogeffect</include>
+    </includes>
     <controls>
-            <control type="image">
-                <description>Black Background</description>
-                <posx>100</posx> 
-                <posy>100</posy> 
-                <width>680</width>
-                <height>480</height> 
-                <texture>black.png</texture>
-                <ondown>3000</ondown> 
-                <onup>3000</onup>
-                <onleft>3000</onleft>
-                <onright>3000</onright>
-            </control> 
-            <control type="grouplist" id="1106">
-                    <posx>105</posx>
-                    <posy>105</posy>
-                    <width>500</width>
-                    <height>200</height>
+         <control type="image">
+              <description>Black Background</description>
+              <posx>100</posx> 
+              <posy>100</posy> 
+              <width>650</width>
+              <height>480</height> 
+              <texture>black.png</texture>
+              <ondown>3000</ondown> 
+              <onup>3000</onup>
+              <onleft>3000</onleft>
+              <onright>3000</onright>
+         </control> 
+         <control type="grouplist" id="1106">
+             <posx>100</posx>
+             <posy>135</posy>
+             <width>650</width>
+             <height>500</height>
+             <usecontrolcoords>true</usecontrolcoords>
+             <visible>true</visible>
+             <!--<control type="label" id="1114">
+                 <description>Keywords</description>
+                 <label>$ADDON[plugin.video.fitnessBlender 32010]</label>
+                 <posx>250</posx> 
+                 <posy>0</posy>
+                 <visible>true</visible>
+                 <font>font14</font>
+                 <textcolor>FFB2D4F5</textcolor>
+                 <width>140</width>
+                 <height>60</height> 
+                 <textoffsetx>12</textoffsetx>
+                 <align>center</align> 
+                 <aligny>center</aligny>
+             </control>-->
+             <!--<control type="image" id="1109">
+                  <description>Green Background</description>
+                  <posx>0</posx> 
+                  <posy>0</posy> 
+                  <width>650</width>
+                  <height>1000</height> 
+                  <texture>green.png</texture>
+                  <ondown>3000</ondown> 
+                  <onup>3000</onup>
+                  <onleft>3000</onleft>
+                  <onright>3000</onright>
+             </control>--> 
+             <control type="group" id="1107">
+                 <posx>0</posx>
+                 <posy>0</posy>
+                 <visible>true</visible>
+                 <control type="image" id="1108">
+                      <description>Purple Background</description>
+                      <posx>0</posx> 
+                      <posy>0</posy> 
+                      <width>1000</width>
+                      <height>1000</height> 
+                      <texture>purple.png</texture>
+                      <ondown>3000</ondown> 
+                      <onup>3000</onup>
+                      <onleft>3000</onleft>
+                      <onright>3000</onright>
+                 </control>
+                 <control type="label" id="1100">
+                      <description>Difficulty</description>
+                      <label>$ADDON[plugin.video.fitnessBlender 32000]</label>
+                      <posx>250</posx> 
+                      <posy>0</posy>
+                      <visible>true</visible>
+                      <font>font14</font>
+                      <textcolor>FFB2D4F5</textcolor>
+                      <width>140</width>
+                      <height>60</height> 
+                      <textoffsetx>12</textoffsetx>
+                      <align>center</align> 
+                      <aligny>center</aligny>
+                 </control> 
+                 <control type="radiobutton" id="1101">
+                      <description>1</description>
+                      <type>radiobutton</type>
+                      <label>$NUMBER[1]</label>
+                      <posx>160</posx> 
+                      <posy>60</posy> 
+                      <width>60</width>
+                      <height>60</height>
+                      <textoffsetx>12</textoffsetx>
+                      <align>left</align> 
+                      <aligny>center</aligny>
+                      <onright>1102</onright>
+                      <ondown>1110</ondown>
+                 </control> 
+                 <control type="radiobutton" id="1102">
+                      <description>2</description>
+                      <label>$NUMBER[2]</label>
+                      <type>radiobutton</type>
+                      <posx>225</posx> 
+                      <posy>60</posy> 
+                      <width>60</width> 
+                      <height>60</height> 
+                      <textoffsetx>12</textoffsetx>
+                      <align>left</align> 
+                      <aligny>center</aligny>
+                      <onright>1103</onright>
+                      <onleft>1101</onleft>
+                      <ondown>1110</ondown>
+                 </control> 
+                 <control type="radiobutton" id="1103">
+                      <description>3</description>
+                      <label>$NUMBER[3]</label>
+                      <type>radiobutton</type>
+                      <posx>290</posx> 
+                      <posy>60</posy> 
+                      <width>60</width> 
+                      <height>60</height> 
+                      <textoffsetx>12</textoffsetx>
+                      <align>left</align> 
+                      <aligny>center</aligny>
+                      <onright>1104</onright>
+                      <onleft>1102</onleft>
+                      <ondown>1110</ondown>
+                 </control> 
+                 <control type="radiobutton" id="1104">
+                      <description>4</description>
+                      <label>$NUMBER[4]</label>
+                      <type>radiobutton</type>
+                      <posx>355</posx> 
+                      <posy>60</posy> 
+                      <width>60</width> 
+                      <height>60</height> 
+                      <textoffsetx>12</textoffsetx>
+                      <align>left</align> 
+                      <aligny>center</aligny>
+                      <onright>1105</onright>
+                      <onleft>1103</onleft>
+                      <ondown>1112</ondown>
+                 </control> 
+                 <control type="radiobutton" id="1105">
+                      <description>5</description>
+                      <label>$NUMBER[5]</label>
+                      <type>radiobutton</type>
+                      <posx>420</posx> 
+                      <posy>60</posy> 
+                      <width>60</width> 
+                      <height>60</height> 
+                      <textoffsetx>12</textoffsetx>
+                      <align>left</align> 
+                      <aligny>center</aligny>
+                      <onleft>1104</onleft>
+                      <ondown>1112</ondown>
+                </control>
+            </control>
+            <control type="group" id="1108">
+                <posx>0</posx> 
+                <posy>125</posy> 
+                <control type="image">
+                    <description>Green Background</description>
+                    <posx>0</posx> 
+                    <posy>0</posy> 
+                    <width>650</width>
+                    <height>1000</height> 
+                    <texture>green.png</texture>
+                </control>
+                <control type="label" id="1109">
+                    <description>Body Focus</description>
+                    <label>$ADDON[plugin.video.fitnessBlender 32001]</label>
+                    <posx>250</posx> 
+                    <posy>0</posy>
                     <visible>true</visible>
-                    <control type="group" id="1107">
-                            <posx>105</posx>
-                            <posy>105</posy>
-                            <width>400</width>
-                            <height>140</height>
-                            <visible>true</visible>
-                        <control type="label" id="1100">
-                            <description>Difficulty</description>
-                            <label>$ADDON[plugin.video.fitnessBlender 32000]</label>
-                            <posx>180</posx> 
-                            <posy>80</posy>
-                            <visible>true</visible>
-                            <font>font14</font>
-                            <textcolor>FFB2D4F5</textcolor>
-                            <width>140</width>
-                            <height>60</height> 
-                            <textoffsetx>12</textoffsetx>
-                            <align>center</align> 
-                            <aligny>center</aligny>
-                        </control> 
-                        <control type="radiobutton" id="1101">
-                            <description>1</description>
-                            <type>radiobutton</type>
-                            <label>$NUMBER[1]</label>
-                            <posx>180</posx> 
-                            <posy>120</posy> 
-                            <width>60</width>
-                            <height>60</height> 
-                            <textoffsetx>12</textoffsetx>
-                            <align>left</align> 
-                            <aligny>center</aligny>
-                            <onright>1102</onright>
-                        </control> 
-                        <control type="radiobutton" id="1102">
-                            <description>2</description>
-                            <label>$NUMBER[2]</label>
-                            <type>radiobutton</type>
-                            <posx>245</posx> 
-                            <posy>120</posy> 
-                            <width>60</width> 
-                            <height>60</height> 
-                            <textoffsetx>12</textoffsetx>
-                            <align>left</align> 
-                            <aligny>center</aligny>
-                            <onright>1103</onright>
-                            <onleft>1101</onleft>
-                        </control> 
-                        <control type="radiobutton" id="1103">
-                            <description>3</description>
-                            <label>$NUMBER[3]</label>
-                            <type>radiobutton</type>
-                            <posx>310</posx> 
-                            <posy>120</posy> 
-                            <width>60</width> 
-                            <height>60</height> 
-                            <textoffsetx>12</textoffsetx>
-                            <align>left</align> 
-                            <aligny>center</aligny>
-                            <onright>1104</onright>
-                            <onleft>1102</onleft>
-                        </control> 
-                        <control type="radiobutton" id="1104">
-                            <description>4</description>
-                            <label>$NUMBER[4]</label>
-                            <type>radiobutton</type>
-                            <posx>375</posx> 
-                            <posy>120</posy> 
-                            <width>60</width> 
-                            <height>60</height> 
-                            <textoffsetx>12</textoffsetx>
-                            <align>left</align> 
-                            <aligny>center</aligny>
-                            <onright>1105</onright>
-                            <onleft>1103</onleft>
-                        </control> 
-                        <control type="radiobutton" id="1105">
-                            <description>5</description>
-                            <label>$NUMBER[5]</label>
-                            <type>radiobutton</type>
-                            <posx>440</posx> 
-                            <posy>120</posy> 
-                            <width>60</width> 
-                            <height>60</height> 
-                            <textoffsetx>12</textoffsetx>
-                            <align>left</align> 
-                            <aligny>center</aligny>
-                            <onleft>1104</onleft>
-                    </control>
+                    <font>font14</font>
+                    <textcolor>black</textcolor>
+                    <width>140</width>
+                    <height>60</height>
+                    <textoffsetx>12</textoffsetx>
+                    <align>center</align> 
+                    <aligny>center</aligny>
+                </control> 
+                <control type="radiobutton" id="1110">
+                    <description>Core</description>
+                    <label>$ADDON[plugin.video.fitnessBlender 32005]</label>
+                    <type>radiobutton</type>
+                    <posx>160</posx> 
+                    <posy>60</posy> 
+                    <width>150</width> 
+                    <height>60</height> 
+                    <textoffsetx>12</textoffsetx>
+                    <textcolor>black</textcolor>
+                    <align>left</align> 
+                    <aligny>center</aligny>
+                    <onup>1101</onup>
+                    <onright>1112</onright>
+                    <ondown>1111</ondown>
+                </control>
+                <control type="radiobutton" id="1111">
+                    <description>Total Body</description>
+                    <label>$ADDON[plugin.video.fitnessBlender 32003]</label>
+                    <type>radiobutton</type>
+                    <posx>160</posx> 
+                    <posy>125</posy> 
+                    <width>150</width> 
+                    <height>60</height> 
+                    <textoffsetx>12</textoffsetx>
+                    <textcolor>black</textcolor>
+                    <align>left</align> 
+                    <aligny>center</aligny>
+                    <onright>1113</onright>
+                    <onup>1110</onup>
+                </control>
+                <control type="radiobutton" id="1112">
+                    <description>Lower Body</description>
+                    <label>$ADDON[plugin.video.fitnessBlender 32002]</label>
+                    <type>radiobutton</type>
+                    <posx>320</posx> 
+                    <posy>60</posy> 
+                    <width>150</width> 
+                    <height>60</height> 
+                    <textoffsetx>12</textoffsetx>
+                    <textcolor>black</textcolor>
+                    <align>left</align> 
+                    <aligny>center</aligny>
+                    <onleft>1110</onleft>
+                    <ondown>1113</ondown>
+                    <onup>1105</onup>
+                </control>
+                <control type="radiobutton" id="1113">
+                    <description>Upper Body</description>
+                    <label>$ADDON[plugin.video.fitnessBlender 32004]</label>
+                    <type>radiobutton</type>
+                    <posx>320</posx> 
+                    <posy>125</posy> 
+                    <width>150</width> 
+                    <height>60</height> 
+                    <textoffsetx>12</textoffsetx>
+                    <textcolor>black</textcolor>
+                    <align>left</align> 
+                    <aligny>center</aligny>
+                    <onleft>1111</onleft>
+                    <onup>1112</onup>
+                </control>
             </control>
         </control>
     </controls>
